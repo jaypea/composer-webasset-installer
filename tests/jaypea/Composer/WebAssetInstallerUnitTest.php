@@ -1,13 +1,12 @@
 <?php
-namespace bitExpert\Composer;
+namespace jaypea\Composer;
 require __DIR__ . '/../../../vendor/composer/composer/tests/Composer/Test/TestCase.php';
 
 
 /**
- * Unit test for {@link \bitExpert\Composer\WebAssetInstaller}.
+ * Unit test for {@link \jaypea\Composer\WebAssetInstaller}.
  *
- * @copyright bitExpert AG
- * @covers bitExpert\Composer\WebAssetInstaller
+ * @covers jaypea\Composer\WebAssetInstaller
  */
 
 
@@ -113,10 +112,9 @@ class WebAssetInstallerUnitTest extends \Composer\Test\TestCase
 			->method('getExtra')
 			->will($this->returnValue(array('target-dir'=> 'myVendor')));
 
-		// will return webroot/myVendor
+		// will return myVendor
 		$installPath = $this->library->getInstallPath($this->package);
 
 		$this->assertStringEndsWith('myVendor', $installPath);
-		$this->assertStringStartsWith('webroot', $installPath);
 	}
 }

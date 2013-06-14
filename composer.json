@@ -1,25 +1,30 @@
 {
-	"name": "bitexpert/web-asset-installer",
+	"name": "jaypea/web-asset-installer",
 	"description": "Web Asset Installer",
 	"type": "composer-installer",
-	"keywords": ["composer","installer", "web", "assets"],
-	"homepage": "https://github.com/bitExpert/composer-webasset-installer",
+	"keywords": ["composer", "installer", "web", "assets"],
+	"homepage": "https://github.com/jaypea/composer-webasset-installer",
 	"license": "Apache 2.0",
 	"authors": [
 		{
 			"name": "Stephan Hochdörfer",
 			"email": "S.Hochdoerfer@bitExpert.de"
+		},
+		{
+			"name": "Jan Prieser",
+			"email": "jan@prieser.net"
 		}
+
 	],
 	"minimum-stability": "dev",
-	"version": "0.2.1",
+	"version": "0.3.1",
 	"autoload": {
-		"psr-0": {"bitExpert\\Composer": ["src/", "tests/"]}
+		"psr-0": {"jaypea\\Composer": ["src/", "tests/"]}
 	},
 	"extra": {
-		"class": "\\bitExpert\\Composer\\WebAssetInstaller",
+		"class": "\\jaypea\\Composer\\WebAssetInstaller",
 		"branch-alias": {
-			"dev-master": "0.2.1-dev"
+			"dev-master": "0.3.1-dev"
 		}
 	},
 	"require-dev": {

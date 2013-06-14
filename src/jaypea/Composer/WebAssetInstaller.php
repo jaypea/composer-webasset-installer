@@ -1,22 +1,20 @@
 <?php
-namespace bitExpert\Composer;
+namespace jaypea\Composer;
 use Composer\Package\PackageInterface;
 
 
 /**
  * Custom Installer for web assets (e.g. Javascript or CSS files). Will install
- * the package in the webroot folder not in the (default) vendor directory making
- * the files publicly accessible.
+ * the package in the target-dir folder instead of the (default) vendor directory.
+ * This helps to make the files public accessible.
  *
- * @copyright bitExpert AG
- * @author Stephan Hochdörfer
  */
 
 
 class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 {
 	/**
-	 * @see Composer\Installer\LibraryInstaller::getInstallPath
+	 * {@inheritDoc}
 	 */
 	public function getInstallPath(PackageInterface $package)
 	{
@@ -28,26 +26,16 @@ class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 			);
 		}
 
-		return $this->getRootPath() . '/' . $extra['target-dir'];
+		return $extra['target-dir'];
 	}
 
 
 	/**
-	 * @see Composer\Installer\LibraryInstaller::supports
+	 * {@inheritDoc}
 	 */
 	public function supports($packageType)
 	{
 		return (bool) ('webasset' === $packageType);
 	}
 
-
-	/**
-	 * Returns the relative root path where to install the web assets.
-	 *
-	 * @return string
-	 */
-	protected function getRootPath()
-	{
-		return 'webroot';
-	}
 }
