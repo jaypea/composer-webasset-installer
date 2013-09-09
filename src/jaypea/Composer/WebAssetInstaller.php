@@ -16,7 +16,7 @@ class WebAssetInstaller extends \Composer\Installer\LibraryInstaller
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getInstallPath(PackageInterface $package)
+	protected function getPackageBasePath(PackageInterface $package)
 	{
 		$extra = $package->getExtra();
 
